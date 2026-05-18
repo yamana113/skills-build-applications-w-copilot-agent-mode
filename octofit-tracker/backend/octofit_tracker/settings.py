@@ -36,6 +36,16 @@ ALLOWED_HOSTS = [
     '*',
 ]
 
+# HTTPS Proxy Configuration - Handle HTTPS from GitHub Codespace
+# This tells Django that HTTPS is being used by a reverse proxy (GitHub Codespace)
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+# REST Framework Configuration
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10
+}
+
 
 # Application definition
 
